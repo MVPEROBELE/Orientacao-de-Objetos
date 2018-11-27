@@ -5,16 +5,10 @@
  */
 package InterfacesPoke;
 
-/**
- *
- * @author Supervisor
- */
+
 public class TelaDescricao extends javax.swing.JDialog {
 
-    /**
-     * Creates new form NewJDialog
-     */
-    
+  
     public void setDescriPoke (String descri)
     {
     this.descriPoke.setText(descri);

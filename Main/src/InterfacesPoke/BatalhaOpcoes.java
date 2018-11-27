@@ -84,6 +84,8 @@ public class BatalhaOpcoes extends javax.swing.JFrame {
         jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(400, 150));
+        setPreferredSize(new java.awt.Dimension(580, 400));
         getContentPane().setLayout(null);
 
         jtfJog3.setText("jTextField4");

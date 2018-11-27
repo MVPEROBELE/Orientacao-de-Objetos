@@ -58,6 +58,8 @@ public class Ganhador extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jList1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(400, 150));
+        setPreferredSize(new java.awt.Dimension(560, 400));
         getContentPane().setLayout(null);
 
         parabens.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N

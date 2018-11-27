@@ -29,7 +29,8 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 255));
-        setMinimumSize(new java.awt.Dimension(562, 400));
+        setLocation(new java.awt.Point(400, 150));
+        setPreferredSize(new java.awt.Dimension(600, 400));
         getContentPane().setLayout(null);
 
         jTextArea1.setEditable(false);
