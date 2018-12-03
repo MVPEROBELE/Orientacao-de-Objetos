@@ -9,10 +9,12 @@ import controle.Controle;
 import java.util.ArrayList;
 import java.util.List;
 import main.Pokemon;
+import java.io.*;
+import java.awt.*;
 
 /**
  *
- * @author Supervisor
+ * @author Millena Venturini
  */
 public class Ganhador extends javax.swing.JFrame {
 
@@ -20,16 +22,27 @@ public class Ganhador extends javax.swing.JFrame {
      * Creates new form Ganhador
      */
     public Ganhador() {
+        //inicializa componentes
         initComponents();
+        editatextos();
+
     }
-    
-    public void editatextos (){
+
+    //inicializa textos
+    public void editatextos() {
         List<Pokemon> aux = Controle.getControle().getParticipantes();
         part.setText("Duelos: " + aux.get(0).getNome() + " x " + aux.get(1).getNome() + " / " + aux.get(2).getNome() + " x " + aux.get(3).getNome() + " / " + aux.get(4).getNome() + " x " + aux.get(5).getNome() + " / " + aux.get(6).getNome() + " x " + aux.get(7).getNome() + ". ");
         round1.setText("Ganhadores primeiro round: " + Controle.getControle().getRound1().get(0).getNome() + ", " + Controle.getControle().getRound1().get(1).getNome() + ", " + Controle.getControle().getRound1().get(2).getNome() + " e " + Controle.getControle().getRound1().get(3).getNome() + ".");
         round2.setText("Ganhadores segundo round: " + Controle.getControle().getRound2().get(0).getNome() + " e " + Controle.getControle().getRound2().get(1).getNome() + ".");
         finalPoke.setText("VENCEDOR: " + Controle.getControle().getGanhador().getNome());
-        
+
+    }
+
+    //grava ganhador
+    public void gravaGanhador() {
+        if (gravar.toString() != "")  {  
+        Controle.getControle().setGravaGanhadores(gravar.toString());
+        }
     }
 
     /**
@@ -43,6 +56,9 @@ public class Ganhador extends javax.swing.JFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        gravar = new javax.swing.JFormattedTextField();
+        ok = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         parabens = new javax.swing.JLabel();
         round1 = new javax.swing.JLabel();
         round2 = new javax.swing.JLabel();
@@ -61,6 +77,29 @@ public class Ganhador extends javax.swing.JFrame {
         setLocation(new java.awt.Point(400, 150));
         setPreferredSize(new java.awt.Dimension(560, 400));
         getContentPane().setLayout(null);
+
+        gravar.setText(" ");
+        gravar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gravarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(gravar);
+        gravar.setBounds(220, 340, 120, 20);
+
+        ok.setText("Ok");
+        ok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ok);
+        ok.setBounds(340, 340, 45, 20);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setText("Salve aqui o ganhador:");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(50, 340, 180, 17);
 
         parabens.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         parabens.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -84,7 +123,7 @@ public class Ganhador extends javax.swing.JFrame {
         finalPoke.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         finalPoke.setText("jLabel3");
         getContentPane().add(finalPoke);
-        finalPoke.setBounds(60, 280, 90, 10);
+        finalPoke.setBounds(50, 280, 90, 10);
 
         imagemGanhador.setIcon(new javax.swing.ImageIcon("D:\\Meus Documentos\\Pictures\\interface\\tm1.jpg")); // NOI18N
         imagemGanhador.setText("jLabel2");
@@ -96,6 +135,15 @@ public class Ganhador extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void gravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gravarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gravarActionPerformed
+
+    private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
+       
+        gravaGanhador();
+    }//GEN-LAST:event_okActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,9 +182,12 @@ public class Ganhador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel finalPoke;
+    private javax.swing.JFormattedTextField gravar;
     private javax.swing.JLabel imagemGanhador;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton ok;
     private javax.swing.JLabel parabens;
     private javax.swing.JLabel part;
     private javax.swing.JLabel round1;

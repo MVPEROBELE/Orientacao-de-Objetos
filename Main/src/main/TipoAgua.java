@@ -7,11 +7,18 @@ package main;
 
 /**
  *
- * @author Supervisor
+ * @author Millena Venturini
  */
 public class TipoAgua extends Tipo {
       @Override
-    public void setVantagens() {
+
+      
+ /**
+ *
+ * define as vantagens do tipo
+ */ 
+      
+      public void setVantagens() {
         this.vantagens.add(new TipoFogo());
         this.vantagens.add(new TipoTerra());
         this.vantagens.add(new TipoPedra());

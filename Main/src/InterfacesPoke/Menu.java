@@ -4,14 +4,19 @@
  * and open the template in the editor.
  */
 package InterfacesPoke;
-
+/**
+ *
+ * @author Millena Venturini
+ */
 import InterfacesPoke.BatalhaOpcoes;
 import controle.Controle;
+
 
 public class Menu extends javax.swing.JFrame {
 
   
     public Menu() {
+        //inicializa componentes, abre a interface e inicializa o jogo
         initComponents();
         Controle controle = new Controle();
         controle.Jogar();
@@ -64,7 +69,7 @@ public class Menu extends javax.swing.JFrame {
 
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
+    //abre a interface de BatalhaOpcoes    
         BatalhaOpcoes bat = new BatalhaOpcoes();
         this.setVisible(false);
         bat.setVisible(true);

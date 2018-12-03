@@ -9,14 +9,21 @@ import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 import main.Pokemon;
 
-
+/**
+ *
+ * @author Millena Venturini
+ */
 
 public class BatalhaOpcoes extends javax.swing.JFrame {
+    
+    /**
+     * Cria um HashMap com os pokemons e suas descrições
+     */
 
     Map<String, String> mapaNomes = new HashMap<String, String>();
 
     public BatalhaOpcoes() {
-
+        //inicializa componentes
         initComponents();
         nomedescri();
         DefaultTableModel modelo = (DefaultTableModel) tablePoke.getModel();
@@ -28,7 +35,7 @@ public class BatalhaOpcoes extends javax.swing.JFrame {
         this.inicializaPart();
 
     }
-    
+    //inicializa caixas de testo
     public void inicializaPart (){
     List<Pokemon> part = Controle.getControle().getParticipantes();
     jtfJog1.setText(part.get(0).getNome());
@@ -40,7 +47,7 @@ public class BatalhaOpcoes extends javax.swing.JFrame {
     jtfJog7.setText(part.get(6).getNome());
     jtfJog8.setText(part.get(7).getNome());
 }
-
+//define o HashMap
     public void nomedescri() {
         mapaNomes.put("FireGrey", "FireGrey é um Pokemon do tipo fogo, pode aumentar seu dano com seu lança chamas de acordo com seu nível de raiva, suas evoluções são desconhecidos. Vantagens contra tipos planta, inseto, gelo e metálicos.");
         mapaNomes.put("AquaPoke", "AquaPoke é um Pokemon do tipo água, tendo vantagem sobre tipos fogo, terra e pedra. Sua aparência é inofensiva, porém, não queira vê-lo irritado. ");
@@ -214,7 +221,7 @@ public class BatalhaOpcoes extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfJog3ActionPerformed
 
     private void gerarBatalhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarBatalhaActionPerformed
-         
+     //abre interface Ganhador    
         Ganhador ganhador = new Ganhador();
         this.setVisible(false);
         ganhador.setVisible(true);

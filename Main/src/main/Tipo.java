@@ -10,14 +10,26 @@ import java.util.List;
 
 /**
  *
- * @author Supervisor
+ * @author Millena Venturini
  */
+
+
 public abstract class Tipo{
+/**
+ *
+ * Define string nome, e inicializa Lista Vantagens.
+ */
      String nome;
     List<Tipo> vantagens = new ArrayList<>(); 
-    
+/**
+ *
+ * altera vantagens
+ */    
     public abstract void setVantagens();
-    
+/**
+ *
+ * retorna as vantagens
+ */    
     public List<Tipo> getVantagens(){
         return this.vantagens;
     

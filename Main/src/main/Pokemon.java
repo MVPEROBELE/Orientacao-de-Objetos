@@ -7,10 +7,10 @@ package main;
 
 /**
  *
- * @author Supervisor
+ * @author Millena Venturini
  */
 public class Pokemon {
-    
+    //cria nome e tipo
     private String nome;
     private Tipo tipo;
   
@@ -18,18 +18,20 @@ public class Pokemon {
     public Pokemon() {
         
     }
-    
+    //altera tipo
     public void setTipo (Tipo tipo){
     this.tipo = tipo;
     
     }
+    //retorna tipo
     Tipo getTipo (){  
     return tipo;
     }
+    //altera nome
     public void setNome (String nome){
         this.nome = nome;
     }
-
+    //retorna nome
     public String getNome() {
         return nome;
     }

@@ -7,10 +7,15 @@ package main;
 
 /**
  *
- * @author Supervisor
+ * @author Millena Venturini
  */
 public class TipoNoturno extends Tipo {
       @Override
+      
+ /**
+ *
+ * define as vantagens do tipo
+ */
     public void setVantagens() {
         this.vantagens.add(new TipoFantasma());
         this.vantagens.add(new TipoPsiquico());

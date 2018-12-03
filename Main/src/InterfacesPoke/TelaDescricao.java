@@ -5,17 +5,22 @@
  */
 package InterfacesPoke;
 
+/**
+ *
+ * @author Millena Venturini
+ */
 
 public class TelaDescricao extends javax.swing.JDialog {
 
   
-    public void setDescriPoke (String descri)
-    {
-    this.descriPoke.setText(descri);
-        }
+//inicializa tela descricao
     public TelaDescricao(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+    }
+      //mostra descrição
+    public void setDescriPoke(String descri) {
+        this.descriPoke.setText(descri);
     }
 
     /**
